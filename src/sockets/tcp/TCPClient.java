@@ -12,6 +12,8 @@ public class TCPClient {
 	private Socket clientSocket;
 	private PrintWriter out;
 	private BufferedReader in;
+	private static final String SERVER_IP = "192.168.100.204";
+	private static final int SERVER_PORT = 5000;
 
 	public void startConnection(String ip, int port) throws IOException {
 		clientSocket = new Socket(ip, port);
@@ -37,7 +39,7 @@ public class TCPClient {
 		TCPClient tCPClient = new TCPClient();
 		try {
 			// Ip del servidor y puerto donde está escuchando el servidor
-			tCPClient.startConnection(TCPServer.IP, TCPServer.PORT);
+			tCPClient.startConnection(SERVER_IP, SERVER_PORT);
 			System.out.println("Hello");
 			Scanner scan = new Scanner(System.in);
 			String consoleInput;

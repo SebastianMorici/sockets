@@ -10,18 +10,20 @@ import java.util.Scanner;
 
 public class UDPClient {
 
+	private static final String SERVER_IP = "192.168.100.204";
+	private static final int SERVER_PORT = 5000;
 	private DatagramSocket socket;
 	private InetAddress address;
 //	private byte[] buffer = new byte[512];
 
 	public UDPClient() throws UnknownHostException, SocketException {
 		socket = new DatagramSocket();
-		address = InetAddress.getByName(UDPServer.IP);
+		address = InetAddress.getByName(SERVER_IP);
 	}
 
 	public String sendMessage(String msg) {
 		byte[] bufferRequest = msg.getBytes();
-		DatagramPacket packetRequest = new DatagramPacket(bufferRequest, bufferRequest.length, address, UDPServer.PORT);
+		DatagramPacket packetRequest = new DatagramPacket(bufferRequest, bufferRequest.length, address, SERVER_PORT);
 		byte[] bufferResponse = new byte[512];
 		DatagramPacket packetResponse = new DatagramPacket(bufferResponse, bufferResponse.length);
 		try {

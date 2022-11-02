@@ -24,7 +24,7 @@ public class UDPServer extends Thread{
 
 	public void run() {
 //		running = true;
-		System.out.println("Server started. Listening in port " + PORT);
+		System.out.println("Server started. Listening in port " + PORT + "... Press CTRL+C to stop.");
 		while (true) {
 			DatagramPacket packetRequest = new DatagramPacket(new byte[128], 128);
 			try {

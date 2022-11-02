@@ -5,14 +5,13 @@ import java.net.ServerSocket;
 
 public class TCPServer {
 
-	public static final int PORT = 5000;
-	public static final String IP = "192.168.100.204";
+	private static final int PORT = 5000;
 	private ServerSocket serverSocket;
 
 	public void start(int port) {
 		try {
 			serverSocket = new ServerSocket(port);
-			System.out.println("Server started. Listening in port " + port);
+			System.out.println("Server started. Listening in port " + port + "... Press CTRL+C to stop.");
 			while (true) {
 				new TCPClientHandler(serverSocket.accept()).start();
 				System.out.println("New client connected, total: " + (Thread.activeCount()-1));
