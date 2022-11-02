@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class UDPClient {
 
 	private static final String SERVER_IP = "192.168.100.204";
-	private static final int SERVER_PORT = 5000;
+	private static final int SERVER_PORT = 4000;
 	private DatagramSocket socket;
 	private InetAddress address;
 //	private byte[] buffer = new byte[512];

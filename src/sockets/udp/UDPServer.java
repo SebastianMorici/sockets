@@ -9,8 +9,7 @@ import java.util.Date;
 
 public class UDPServer extends Thread{
 
-	public static final int PORT = 4000;
-	public static final String IP = "192.168.100.204";
+	private static final int PORT = 4000;
 	
 	private DatagramSocket socket;
 //	private boolean running;
